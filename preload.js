@@ -1,6 +1,5 @@
 const { contextBridge } = require('electron');
 
-// Expor dados de demo diretamente para evitar problemas com paths e sandbox
 contextBridge.exposeInMainWorld('studyAPI', {
   getDemoSlots: () => [
     { start_hm: '19:45', duration_min: 60, label: 'Matéria do Dia - Teoria' },
