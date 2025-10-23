@@ -33,3 +33,4 @@ class SlotFactory {
 }
 
 module.exports = SlotFactory;
+

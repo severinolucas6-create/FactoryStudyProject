@@ -1,5 +1,6 @@
 const { contextBridge } = require('electron');
-const SlotFactory = require('./src/factories/SlotFactory');
+const path = require('path');
+const SlotFactory = require(path.join(__dirname, 'src', 'factories', 'SlotFactory.js'));
 
 contextBridge.exposeInMainWorld('studyAPI', {
   getDemoSlots: () => [
