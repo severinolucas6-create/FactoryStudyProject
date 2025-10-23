@@ -1,0 +1,13 @@
+{
+  "name": "factorystudyproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "demo": "node src/examples/demo.js"
+}
+,
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
