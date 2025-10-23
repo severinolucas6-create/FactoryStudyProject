@@ -1,6 +1,14 @@
 const { contextBridge } = require('electron');
-const path = require('path');
-const SlotFactory = require(path.join(__dirname, 'src', 'factories', 'SlotFactory.js'));
+
+// Require SlotFactory usando caminho relativo construído diretamente
+const slotFactoryPath = __dirname + '/src/factories/SlotFactory.js';
+let SlotFactory;
+try {
+  SlotFactory = require(slotFactoryPath);
+} catch (err) {
+  console.error('Failed to require SlotFactory at', slotFactoryPath, err);
+  throw err;
+}
 
 contextBridge.exposeInMainWorld('studyAPI', {
   getDemoSlots: () => [
