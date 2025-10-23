@@ -1,7 +1,6 @@
 const { contextBridge } = require('electron');
 
-// Require SlotFactory usando caminho relativo construído diretamente
-const slotFactoryPath = __dirname + '/src/factories/SlotFactory.js';
+const slotFactoryPath = (process && typeof process.cwd === 'function' ? process.cwd() : __dirname) + '/src/factories/SlotFactory.js';
 let SlotFactory;
 try {
   SlotFactory = require(slotFactoryPath);
